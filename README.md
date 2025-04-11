@@ -64,7 +64,54 @@ npm install
 npm run dev
 ```
 
-Once started, the web application will be available at http://localhost:5173/
+Once started, the web application will be available at http://localhost:3000/
+
+### Installing from Release Build
+
+If you prefer not to build the application yourself, you can download the pre-built version:
+
+#### Download and Installation Steps
+
+1. **Download the Build**:
+   - Go to the [GitHub Releases page](https://github.com/datalore92/SolanaTokenCreator/releases)
+   - Find the latest release and download `web-app-build.zip` from the Assets section
+
+2. **Extract the Files** (Linux):
+   ```bash
+   # Create a directory where you want to install the application
+   mkdir -p ~/solana-token-creator
+   
+   # Move to that directory
+   cd ~/solana-token-creator
+   
+   # Extract the zip file (replace the path with your download location)
+   unzip ~/Downloads/web-app-build.zip
+   ```
+
+3. **Serve the Application**:
+   The extracted files are static assets that need to be served by a web server. You can use:
+   
+   - Python's built-in HTTP server:
+     ```bash
+     cd ~/solana-token-creator
+     python3 -m http.server 8080
+     ```
+     Then open your browser to `http://localhost:8080`
+   
+   - Node.js http-server (install with `npm install -g http-server` first):
+     ```bash
+     cd ~/solana-token-creator
+     http-server -p 8080
+     ```
+     Then open your browser to `http://localhost:8080`
+
+4. **Connect Your Wallet**:
+   Once the application is running in your browser, connect your Solana wallet to begin creating your token.
+
+#### System Requirements
+- Linux operating system
+- Modern web browser (Chrome, Firefox, Brave, etc.)
+- Solana wallet extension (Phantom, Solflare, etc.)
 
 ## Benefits of Using the Web Application
 
