@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solana Token Creator</title>
+    <!-- Ensure the page doesn't remain blank -->
+    <style>
+      body {
+        background-color: #111827;
+        color: #F9FAFB;
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+      #initial-loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+      }
+      #initial-loading h1 {
+        color: #9945FF;
+      }
+      #root:not(:empty) + #initial-loading {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- Fallback content that shows until React renders -->
+    <div id="initial-loading">
+      <h1>Solana Token Creator</h1>
+      <p>Loading application...</p>
+    </div>
+    
+    <!-- Load React application -->
+    <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Ensure we fallback if script loading fails -->
+    <script>
+      // Set a timeout to check if the React app has rendered
+      setTimeout(function() {
+        const root = document.getElementById('root');
+        const loading = document.getElementById('initial-loading');
+        
+        // If the root is still empty after 5 seconds, show an error
+        if (root && root.innerHTML === '') {
+          if (loading) {
+            loading.innerHTML = `
+              <h1>Solana Token Creator</h1>
+              <p>Error loading the application.</p>
+              <p>Try opening the browser console (F12) to check for errors.</p>
+              <p>You can also try the <a href="test.html" style="color: #14F195;">test page</a> instead.</p>
+            `;
+          }
+        }
+      }, 5000);
+    </script>
+  </body>
+</html>

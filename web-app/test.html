@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Solana Token 2025 - Test Page</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        background-color: #111827;
+        color: #F9FAFB;
+        margin: 0;
+        padding: 20px;
+        line-height: 1.6;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #1F2937;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #9945FF;
+        margin-bottom: 20px;
+      }
+      .button {
+        background-color: #9945FF;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 20px;
+        font-size: 16px;
+      }
+      .button:hover {
+        background-color: #7d39cc;
+      }
+      .success {
+        background-color: rgba(20, 241, 149, 0.1);
+        color: #14F195;
+        padding: 10px;
+        margin-top: 20px;
+        border-radius: 4px;
+        border-left: 4px solid #14F195;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Custom Solana Token 2025</h1>
+      <p>This is a test page to ensure that the browser can render static HTML correctly.</p>
+      <p>If you're seeing this page, it means that your browser is capable of displaying content correctly.</p>
+      <p>The issue with the blank page in the main application is likely related to JavaScript errors or missing dependencies.</p>
+      
+      <button id="testButton" class="button">Test Wallet Connection</button>
+      <div id="testResult" class="success">Wallet checking test completed.</div>
+      
+      <script>
+        // Simple test script to check basic JS functionality
+        document.getElementById('testButton').addEventListener('click', function() {
+          console.log('Button clicked');
+          const resultElement = document.getElementById('testResult');
+          resultElement.style.display = 'block';
+          
+          // Check for wallet extensions
+          const hasSolana = window.solana !== undefined;
+          const hasSolflare = window.solflare !== undefined;
+          
+          if (hasSolana) {
+            console.log('Phantom wallet extension detected');
+            resultElement.innerHTML += '<br>✅ Phantom wallet extension detected';
+          } else {
+            console.log('Phantom wallet extension NOT detected');
+            resultElement.innerHTML += '<br>❌ Phantom wallet extension not detected';
+          }
+          
+          if (hasSolflare) {
+            console.log('Solflare wallet extension detected');
+            resultElement.innerHTML += '<br>✅ Solflare wallet extension detected';
+          } else {
+            console.log('Solflare wallet extension NOT detected');
+            resultElement.innerHTML += '<br>❌ Solflare wallet extension not detected';
+          }
+          
+          if (!hasSolana && !hasSolflare) {
+            resultElement.innerHTML += '<br><br>No wallet extensions detected. Please install Phantom or Solflare to connect a wallet.';
+          }
+        });
+      </script>
+    </div>
+  </body>
+</html>

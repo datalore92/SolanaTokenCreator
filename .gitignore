@@ -1,0 +1,32 @@
+# Build artifacts
+/target
+**/*.rs.bk
+*.so
+*.so.*
+
+# Node.js dependencies
+/web-app/node_modules
+/web-app/.env
+/web-app/.env.local
+/web-app/.env.development.local
+/web-app/.env.test.local
+/web-app/.env.production.local
+/web-app/npm-debug.log*
+/web-app/yarn-debug.log*
+/web-app/yarn-error.log*
+/web-app/dist
+/web-app/build
+
+# Editor and OS specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Private keys and sensitive info
+*.keypair
+*-keypair.json
+owner-keypair.json
+seedphrase.txt
